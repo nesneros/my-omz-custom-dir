@@ -1,6 +1,7 @@
 # Spefify where gcloud is installed. This is used by ohmyzsh gcloud plugin
 # The logic below is heavy inspired by the glcoud plugin
 
+# Set CLOUDSDK_HOME
 if [[ -z "${CLOUDSDK_HOME}" ]]; then
   search_locations=(
       $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
@@ -12,4 +13,8 @@ if [[ -z "${CLOUDSDK_HOME}" ]]; then
       break
     fi
   done
+fi
+
+if [[ -f $HOMEBREW_PREFIX/opt/nvm/nvm.sh ]] ; then
+  export NVM_HOMEBREW=$HOMEBREW_PREFIX/opt/nvm/
 fi
