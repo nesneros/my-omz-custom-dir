@@ -1,3 +1,3 @@
-if [[ ! -z "$+commands[code]" ]] ; then
-    export VISUAL="$(type code) -w"
+if [[ ! -z "$+commands[codium]" ]] ; then
+    export VISUAL="$(which codium) -w"
 fi
