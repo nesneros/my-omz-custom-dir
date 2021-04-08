@@ -14,7 +14,3 @@ if [[ -z "${CLOUDSDK_HOME}" ]]; then
     fi
   done
 fi
-
-if [[ -f $HOMEBREW_PREFIX/opt/nvm/nvm.sh ]] ; then
-  export NVM_HOMEBREW=$HOMEBREW_PREFIX/opt/nvm/
-fi
