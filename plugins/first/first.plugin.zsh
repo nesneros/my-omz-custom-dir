@@ -5,6 +5,7 @@
 if [[ -z "${CLOUDSDK_HOME}" ]]; then
   search_locations=(
       $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
+  #    $HOME/.asdf/installs/gcloud/$(asdf current gcloud | awk '{ print $2 }')
   )
 
   for gcloud_sdk_location in $search_locations; do
@@ -13,4 +14,9 @@ if [[ -z "${CLOUDSDK_HOME}" ]]; then
       break
     fi
   done
+fi
+
+# Set fzf base
+if [[ -z "$FZF_BASE" ]]; then
+  FZF_BASE=$(cd $(which fzf)/../.. ; pwd)
 fi

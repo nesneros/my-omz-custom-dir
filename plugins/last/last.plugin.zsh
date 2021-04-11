@@ -2,7 +2,7 @@
 # potentially make some plugins not load correctly
 
 # Add scripts dir to PATH
-PATH=$ZSH_CUSTOM/scripts:~/bin/share:~/bin:$PATH
+PATH=$ZSH_CUSTOM/scripts:$PATH
 
 # Inspired by Zoppo
 # Create an alias for a command with some options.
