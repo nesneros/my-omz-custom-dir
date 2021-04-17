@@ -24,7 +24,8 @@ for e in ag cp grep ln mv; do
 done
 
 alias -g F='|less +F'
-alias -g G='|grep --ignore-case -E'
+alias -g GREP='|grep --ignore-case -E'
+alias -g G='|rg`'
 alias -g H='|head'
 alias -g L='|less'
 alias -g S='|sort'
