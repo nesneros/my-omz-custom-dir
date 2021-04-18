@@ -1,3 +1,3 @@
 if (( $+commands[lsd] )) ; then
-    alias ls=lsd
+    # alias ls=lsd
 fi
