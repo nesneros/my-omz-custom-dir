@@ -1,4 +1,4 @@
-# Load this as the latest plugin. It defines some global aliases which could
+# By naming convention this is the last setup scripr processed. It (among others) defines some global aliases which could
 # potentially make some plugins not load correctly
 
 # Add scripts dir to PATH

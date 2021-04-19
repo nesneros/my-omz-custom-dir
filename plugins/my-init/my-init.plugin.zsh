@@ -1,3 +1,7 @@
+# Do some pre-processing needed for other plugins. 
+# Typically detect and set locations of other programs that can't be detected
+# by the plugin (often case by Brew using another location for M1).
+
 # Spefify where gcloud is installed. This is used by ohmyzsh gcloud plugin
 # The logic below is heavy inspired by the glcoud plugin
 
