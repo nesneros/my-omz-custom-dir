@@ -1,2 +1,3 @@
-plugins/zsh-completions
+plugins/zsh-completions/
+plugins/fzf-tab/
 themes/powerlevel10k/
