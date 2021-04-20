@@ -33,3 +33,7 @@ alias -g T='|tail -100f'
 
 # Remove duplicates from PATH
 typeset -U path
+
+[[ -d $CLOUDSDK_HOME/completion.zsh.inc ]] && source $CLOUDSDK_HOME/completion.zsh.inc
+
+autoload -U compinit && compinit
