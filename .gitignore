@@ -1,3 +1,4 @@
-plugins/zsh-completions/
 plugins/fzf-tab/
+plugins/zsh-completions/
+plugins/zsh-syntax-highlighting/
 themes/powerlevel10k/
