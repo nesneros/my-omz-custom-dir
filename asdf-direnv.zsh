@@ -1,3 +1,8 @@
+# check if fasd is installed
+if (( ! ${+commands[asdf]} )); then
+  return
+fi
+
 # Use direnv instead of shims. Direnv asdf plugin must be added
 hook="$(asdf exec direnv hook zsh)"
 if [[ $? == 0 ]]; then
