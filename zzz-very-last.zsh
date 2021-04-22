@@ -23,6 +23,23 @@ for e in ag cp grep ln mv; do
     alias "$e=nocorrect ${aliases[$e]:-$e}"
 done
 
+function _makesudo {
+    if type "$1" >/dev/null ; then
+        alias "$1"="sudo $1"
+    fi
+}
+
+case "$OSTYPE" in
+    (linux*)
+        for p in apt aptitude snap systemctl; do
+            _makesudo $p
+        done
+        ;;
+    (darvin*)
+        ;;
+    (*)
+esac
+
 alias -g F='|less +F'
 alias -g GREP='|grep --ignore-case -E'
 alias -g G='|rg'
@@ -30,6 +47,8 @@ alias -g H='|head'
 alias -g L='|less'
 alias -g S='|sort'
 alias -g T='|tail -100f'
+# Colorize json
+alias -g J='|jq .'
 
 # Remove duplicates from PATH
 typeset -U path
