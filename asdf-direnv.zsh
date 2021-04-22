@@ -15,3 +15,4 @@ if [[ $? == 0 ]]; then
 
     # In addition ~/.config/direnv/direnvrc is updated
 fi
+unset hook
