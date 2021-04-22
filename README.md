@@ -10,7 +10,7 @@ Install in OMZ/custom/plugins directory
 
 ## Other installs
 
-* bat
+* bat: On Linux it might be installed as 'batcat'. Create a symlink
 * direnv
 * fasd
 * fzf
