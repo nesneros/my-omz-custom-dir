@@ -1,4 +1,4 @@
-# Do some pre-processing needed for other plugins. 
+# Do some pre-processing needed for other plugins.
 # Typically detect and set locations of other programs that can't be detected
 # by the plugin (often case by Brew using another location for M1).
 
@@ -8,8 +8,8 @@
 # Set CLOUDSDK_HOME
 if [[ -z "${CLOUDSDK_HOME}" ]]; then
   search_locations=(
-      $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
-  #    $HOME/.asdf/installs/gcloud/$(asdf current gcloud | awk '{ print $2 }')
+    $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
+    #    $HOME/.asdf/installs/gcloud/$(asdf current gcloud | awk '{ print $2 }')
   )
 
   for gcloud_sdk_location in $search_locations; do
@@ -20,7 +20,16 @@ if [[ -z "${CLOUDSDK_HOME}" ]]; then
   done
 fi
 
-# Set fzf base
-if [[ -z "$FZF_BASE" ]]; then
-  FZF_BASE=$(cd $(which fzf)/../.. ; pwd)
-fi
+# # Set fzf base, used for fzf plugin
+# if [[ -z "$FZF_BASE" ]] && (($ + commands[fzf])); then
+#   case $OSTYPE in
+#   linux*) ;;
+
+#   darwin*)
+#     FZF_BASE=$(
+#       cd $(which fzf)/../..
+#       pwd
+#     )
+#     ;;
+#   esac
+# fi
