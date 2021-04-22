@@ -16,6 +16,7 @@ Install in OMZ/custom/plugins directory
 * fzf
 * lazygit
 * p10k prompt
+* thefuck
 
 ## Notes
 
