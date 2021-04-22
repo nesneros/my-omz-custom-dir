@@ -10,8 +10,9 @@ Install in OMZ/custom/plugins directory
 
 ## Other installs
 
+* asdf
 * bat: On Linux it might be installed as 'batcat'. Create a symlink
-* direnv
+* direnv: Install with asdf
 * fasd
 * fzf
 * lazygit
