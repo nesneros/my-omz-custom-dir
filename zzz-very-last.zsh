@@ -56,3 +56,6 @@ typeset -U path
 [[ -d $CLOUDSDK_HOME/completion.zsh.inc ]] && source $CLOUDSDK_HOME/completion.zsh.inc
 
 autoload -U compinit && compinit
+
+# Override git alias
+alias alias gr=gradle
