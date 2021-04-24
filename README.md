@@ -4,9 +4,10 @@
 
 Install in OMZ/custom/plugins directory
 
+* autoupdate
 * fzf-tab
 * zsh-completions
-* zsh-syntax-highlighting
+* fast-syntax-highlighting
 
 ## Other installs
 
