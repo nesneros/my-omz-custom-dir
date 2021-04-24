@@ -27,9 +27,11 @@ plugins=(
   ripgrep
   thefuck
   # Seperate installed plugins
+  $(baseNameIfExist autoupdate)
   $(baseNameIfExist fzf-tab)
   $(baseNameIfExist zsh-completions)
-  $(baseNameIfExist zsh-syntax-highlighting)
+  # $(baseNameIfExist zsh-syntax-highlighting)
+  $(baseNameIfExist fast-syntax-highlighting)
   # gcloud must come after zsh-completions
   gcloud
 )
