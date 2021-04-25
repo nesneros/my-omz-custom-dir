@@ -29,6 +29,7 @@ function _makesudo {
     fi
 }
 
+# Always use sudo with a few commands
 case "$OSTYPE" in
     (linux*)
         for p in apt aptitude snap systemctl; do
@@ -40,6 +41,7 @@ case "$OSTYPE" in
     (*)
 esac
 
+# Some global aliases
 alias -g F='|less +F'
 alias -g GREP='|grep --ignore-case -E'
 alias -g G='|rg'
@@ -53,9 +55,7 @@ alias -g J='|jq .'
 # Remove duplicates from PATH
 typeset -U path
 
-[[ -d $CLOUDSDK_HOME/completion.zsh.inc ]] && source $CLOUDSDK_HOME/completion.zsh.inc
-
 autoload -U compinit && compinit
 
 # Override git alias
-alias alias gr=gradle
+alias gr=gradle
