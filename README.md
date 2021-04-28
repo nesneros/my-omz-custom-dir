@@ -22,6 +22,9 @@ Install in OMZ/custom/plugins directory
 
 ## Notes
 
+### Fonts
+
+Install Meslo Nerd Font. See powerlevel10k readme for details.
 
 From: https://github.com/VSCodium/vscodium/blob/master/DOCS.md#extensions-marketplace
 ### <a id="howto-vscode-marketplace"></a>How to use the VS Code Marketplace
