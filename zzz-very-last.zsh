@@ -14,7 +14,7 @@ alias+() {
 alias+ df -h
 
 # ### Disable glob for some commands
-for e in find locate mdfind rsync scp; do
+for e in find mdfind rsync scp; do
     alias "$e=noglob ${aliases[$e]:-$e}"
 done
 
