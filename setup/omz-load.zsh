@@ -21,6 +21,7 @@ plugins=(
   #direnv
   docker
   #fasd
+  fd
   fzf
   git
   gradle
