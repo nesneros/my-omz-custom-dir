@@ -1,4 +1,12 @@
 upgrade-all() {
+    if hash apt-get &> /dev/null ; then
+        print "\n--- Upgrading APT packages ---"
+        sudo apt-get update && sudo apt-get upgrade
+    fi
+
+    print "Upgrading brews..."
+    hash brew &> /dev/null && brew upgrade --cask
+
     print "Upgrading brews..."
     hash brew &> /dev/null && brew upgrade --cask
 
