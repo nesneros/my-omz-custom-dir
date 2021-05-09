@@ -54,6 +54,8 @@ alias -g T='|tail -100f'
 # Colorize json
 alias -g J='|jq .'
 
+alias+ pgrep -fli
+
 # Remove duplicates from PATH
 typeset -U path
 
