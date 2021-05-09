@@ -63,3 +63,5 @@ autoload -U compinit && compinit
 
 # Override git alias
 alias gr=gradle
+
+unsetopt correctall
