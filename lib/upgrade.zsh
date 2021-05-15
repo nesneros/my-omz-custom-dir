@@ -7,6 +7,8 @@ upgrade-all() {
     if hash brew &>/dev/null; then
         print "\n--- Upgrading brews ---"
         brew upgrade --cask
+        brew upgrade
+        brew cleanup
     fi
 
     print "\n--- Upgrading asdf plugins ---"
