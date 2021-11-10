@@ -16,7 +16,6 @@ Install in OMZ/custom/plugins directory
 * direnv: Install with asdf
 * fasd
 * fzf
-* lazygit
 * p10k prompt
 * thefuck
 
