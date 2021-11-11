@@ -42,4 +42,6 @@ source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+P10K_FILE=$ZSH/custom/p10k/p10k.zsh
+[[ ! -f "$P10K_FILE" ]] || source "$P10K_FILE"
+unset P10K_FILE
