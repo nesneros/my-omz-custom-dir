@@ -18,7 +18,6 @@ plugins=(
   # Standard plugins
   asdf
   brew
-  linux-brew
   #direnv
   docker
   #fasd
