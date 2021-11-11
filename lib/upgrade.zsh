@@ -17,6 +17,6 @@ upgrade-all() {
     print "\n--- Upgrade OH MY ZSH ---"
     type omz &>/dev/null && omz update
 
-    print "\n--- Upgrade OH MY ZSH ---"
+    print "\n--- Upgrade Custom OH MY ZSH ---"
     type upgrade_oh_my_zsh_custom &>/dev/null && upgrade_oh_my_zsh_custom
 }
