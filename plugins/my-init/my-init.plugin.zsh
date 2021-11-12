@@ -20,16 +20,17 @@ if [[ -z "${CLOUDSDK_HOME}" ]]; then
   done
 fi
 
-# # Set fzf base, used for fzf plugin
-# if [[ -z "$FZF_BASE" ]] && (($ + commands[fzf])); then
-#   case $OSTYPE in
-#   linux*) ;;
-
-#   darwin*)
-#     FZF_BASE=$(
-#       cd $(which fzf)/../..
-#       pwd
-#     )
-#     ;;
-#   esac
-# fi
+# Set fzf base, used for fzf plugin
+if [[ -z "$FZF_BASE" ]] && (( ${+commands[fzf]} )); then
+  case $OSTYPE in
+  linux*)
+    export FZF_BASE=$HOMEBREW_PREFIX/var/homebrew/linked/fzf
+    ;;
+    #   darwin*)
+    #     FZF_BASE=$(
+    #       cd $(which fzf)/../..
+    #       pwd
+    #     )
+    #     ;;
+  esac
+fi
