@@ -2,7 +2,9 @@
 
 set -e 
 
-echo "OMZ install dir: $ZSH"
+cd $(dirname $0)/..
 
-cd $ZSH_CUSTOM/brew
+echo "OMZ Custom install dir: $(pwd)"
+
+cd brew
 brew bundle
