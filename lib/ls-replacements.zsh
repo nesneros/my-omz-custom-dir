@@ -5,6 +5,6 @@ fi
 if (( ${+commands[exa]} )) ; then
     alias+ exa --git -a --icons --group-directories-first
     # Change color of date column (da), git modified (gm) in long listings
-    export EXA_COLORS="da=3:gm=1"
+    export EXA_COLORS="da=37:gm=31:di=36"
     alias ls=exa
 fi
