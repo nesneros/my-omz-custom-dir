@@ -18,12 +18,6 @@ linkdot() {
     ln -sf $from $to    
 }
 
-p10kSrc=$dotFilesDir/p10k.zsh
-p10kTarget=$HOME/.p10k.zsh
-
-echo "Overwriting $p10kTarget with $p10kSrc"
-cp $p10kSrc $p10kTarget
-
 #echo "Linking dot files..."
 #linkdot "p10k.zsh"
 
