@@ -2,6 +2,13 @@
 # Typically detect and set locations of other programs that can't be detected
 # by the plugin (often case by Brew using another location for M1).
 
+# Inspired by Zoppo
+# Create an alias for a command with some options.
+# Either create new alias or add options to existing alias
+alias+() {
+    alias "$1"="${aliases[$1]:-$1} $argv[2,-1]"
+}
+
 # Spefify where gcloud is installed. This is used by ohmyzsh gcloud plugin
 # The logic below is heavy inspired by the glcoud plugin
 
