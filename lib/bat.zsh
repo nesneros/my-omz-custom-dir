@@ -5,3 +5,4 @@ fi
 eval $(batpipe)
 
 alias man=batman
+alias cat=bat
