@@ -44,6 +44,7 @@ case "$OSTYPE" in
 esac
 
 # Some global aliases
+alias -g B='|bat'
 alias -g F='|less +F'
 alias -g GREP='|grep --ignore-case -E'
 alias -g G='|rg --smart-case '
