@@ -61,8 +61,9 @@ alias+ pgrep -fli
 typeset -U path
 
 autoload -U compinit && compinit
-
-# Override git alias
+# Define some aliases. Note gr overrides a git alias
 alias gr=gradle
+alias lg=lazygit
+
 
 unsetopt correctall
