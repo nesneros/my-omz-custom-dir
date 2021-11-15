@@ -9,6 +9,16 @@ alias+() {
     alias "$1"="${aliases[$1]:-$1} $argv[2,-1]"
 }
 
+# Init brew here so it is available when evaluated lib dir
+if [ -f /home/linuxbrew/.linuxbrew/bin/brew ] ; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+if (( ${+commands[brew]} )) ; then
+  [[ -z "$HOMEBREW_PREFIX" ]] && echo "HOMEBREW_PREFIX not defined"
+
+  FPATH=${HOMEBREW_PREFIX}/share/zsh/site-functions:$FPATH
+fi
+
 # Spefify where gcloud is installed. This is used by ohmyzsh gcloud plugin
 # The logic below is heavy inspired by the glcoud plugin
 
@@ -30,9 +40,9 @@ fi
 # Set fzf base, used for fzf plugin
 if [[ -z "$FZF_BASE" ]] && (( ${+commands[fzf]} )); then
   case $OSTYPE in
-  linux*)
-    export FZF_BASE=$HOMEBREW_PREFIX/var/homebrew/linked/fzf
-    ;;
+    linux*)
+       export FZF_BASE=$HOMEBREW_PREFIX/var/homebrew/linked/fzf
+        ;;
     #   darwin*)
     #     FZF_BASE=$(
     #       cd $(which fzf)/../..
