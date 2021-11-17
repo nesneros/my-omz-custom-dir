@@ -7,4 +7,5 @@ if (( ${+commands[exa]} )) ; then
     # Change color of date column (da), git modified (gm) in long listings
     export EXA_COLORS="da=37:gm=31:di=36"
     alias ls=exa
+    unalias la
 fi
