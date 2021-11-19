@@ -4,4 +4,4 @@ plugins/zsh-syntax-highlighting/
 plugins/fzf-tab/
 plugins/fast-syntax-highlighting/
 themes/powerlevel10k/
-brew/Brewfile.lock.json
+setup/Brewfile.lock.json
