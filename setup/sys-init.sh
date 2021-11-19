@@ -6,10 +6,9 @@ cd $(dirname $0)/..
 
 echo "OMZ Custom install dir: $(pwd)"
 
-(
-    cd brew
-    brew bundle
-)
+pushd setup
+brew bundle
+popd
 
 dotFilesDir=$(pwd)/dotfiles
 
