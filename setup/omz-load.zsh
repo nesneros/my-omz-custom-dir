@@ -29,6 +29,7 @@ plugins=(
   thefuck
   # Seperate installed plugins
   $(baseNameIfExist autoupdate)
+  $(baseNameIfExist clipboard)
   $(baseNameIfExist fzf-tab)
   $(baseNameIfExist zsh-completions)
   # $(baseNameIfExist zsh-syntax-highlighting)
