@@ -1,7 +1,2 @@
-plugins/autoupdate/
-plugins/zsh-completions/
-plugins/zsh-syntax-highlighting/
-plugins/fzf-tab/
-plugins/fast-syntax-highlighting/
 themes/powerlevel10k/
 setup/Brewfile.lock.json
