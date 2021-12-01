@@ -16,7 +16,7 @@ baseNameIfExist() {
 plugins=(
   my-init
   # Standard plugins
-  asdf
+  # asdf
   brew
   #direnv
   docker
