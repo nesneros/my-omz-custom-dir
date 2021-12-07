@@ -65,5 +65,4 @@ autoload -U compinit && compinit
 alias gr=gradle
 alias lg=lazygit
 
-
 unsetopt correctall

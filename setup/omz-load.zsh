@@ -17,10 +17,10 @@ plugins=(
   my-init
   # Standard plugins
   # asdf
-  brew
-  #direnv
+  # brew
+  # direnv
   docker
-  #fasd
+  # fasd
   fd
   fzf
   git

@@ -4,8 +4,7 @@ if (( ! ${+commands[asdf]} )); then
 fi
 
 export ASDF_CONFIG_FILE=$ZSH_CUSTOM/dotfiles/asdfrc
-ASDF_DIR=$(brew --prefix asdf)
-source $ASDF_DIR/libexec/asdf.sh
+source $(brew --prefix asdf)/libexec/asdf.sh
 
 export DIRENV_BIN=$(asdf where direnv)/bin/direnv
 

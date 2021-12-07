@@ -12,7 +12,7 @@ upgrade-all() {
     fi
 
     print "\n--- Upgrading asdf plugins ---"
-    hash asdf &>/dev/null && asdf plugin-update --all
+    hash asdf &>/dev/null && asdf plugin-update --all | grep -v "Already on '\|Your branch is up to date with"
 
     print "\n--- Upgrade OH MY ZSH ---"
     type omz &>/dev/null && omz update

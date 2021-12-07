@@ -1,21 +1,26 @@
-# Do some pre-processing needed for other plugins.
-# Typically detect and set locations of other programs that can't be detected
-# by the plugin (often case by Brew using another location for M1).
-
-# Inspired by Zoppo
 # Create an alias for a command with some options.
 # Either create new alias or add options to existing alias
+# Credit: Inspired by Zoppo
 alias+() {
     alias "$1"="${aliases[$1]:-$1} $argv[2,-1]"
 }
 
-# Init brew here so it is available when evaluated lib dir
-if [ -f /home/linuxbrew/.linuxbrew/bin/brew ] ; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Look for brew installations and init
+if [[ -z "$HOMEBREW_PREFIX" ]] ; then
+  brewLocations=(/opt/homebrew /home/linuxbrew/.linuxbrew)
+  for e in $brewLocations; do
+    brewBin=$e/bin/brew
+    if [[ -x "$brewBin" ]] ; then
+      eval $($brewBin shellenv)
+      break
+    fi
+    unset brewBin
+  done
+  unset brewLocations
 fi
+
 if (( ${+commands[brew]} )) ; then
   [[ -z "$HOMEBREW_PREFIX" ]] && echo "HOMEBREW_PREFIX not defined"
-
   FPATH=${HOMEBREW_PREFIX}/share/zsh/site-functions:$FPATH
 fi
 
