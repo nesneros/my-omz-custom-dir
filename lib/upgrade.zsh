@@ -14,6 +14,9 @@ upgrade-all() {
     print "\n--- Upgrading asdf plugins ---"
     hash asdf &>/dev/null && asdf plugin-update --all | grep -v "Already on '\|Your branch is up to date with"
 
+    print "\n--- Upgrading asdf install system tools ---"
+    type upgrade_asdf_system_tools &>/dev/null && upgrade_asdf_system_tools
+
     print "\n--- Upgrade OH MY ZSH ---"
     type omz &>/dev/null && omz update
 
