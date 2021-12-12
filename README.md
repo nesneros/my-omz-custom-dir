@@ -58,3 +58,13 @@ with the content:
   }
 }
 ```
+
+## .zprofile
+
+Ideas for .zprofile
+```
+eval $(/opt/homebrew/bin/brew shellenv)
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
+hash fortune 2> /dev/null && echo && fortune
+```
+
