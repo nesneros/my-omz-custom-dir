@@ -10,11 +10,13 @@ Install in OMZ/custom/plugins directory
 * zsh-completions
 * fast-syntax-highlighting
 
+## asdf
+
+* Create .envrc in homedir to put asdf managed tools on path (and not use shims)
+
 ## Other installs
 
 * asdf
-* bat: On Linux it might be installed as 'batcat'. Create a symlink
-* direnv: Install with asdf
 * fasd
 * fzf
 * p10k prompt
