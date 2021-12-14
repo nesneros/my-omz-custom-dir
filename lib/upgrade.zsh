@@ -11,11 +11,15 @@ upgrade-all() {
         brew cleanup
     fi
 
-    print "\n--- Upgrading asdf plugins ---"
-    hash asdf &>/dev/null && asdf plugin-update --all | grep -v "Already on '\|Your branch is up to date with"
+    if hash asdf >/dev/null; then
+        print "\n--- Upgrading asdf plugins ---"
+        asdf plugin-update --all | grep -v "Already on '\|Your branch is up to date with"
 
-    print "\n--- Upgrading asdf install system tools ---"
-    type upgrade_asdf_system_tools &>/dev/null && upgrade_asdf_system_tools
+        print "\n--- Upgrading asdf install system tools ---"
+        for e in direnv; do
+            asdf install $e latest && asdf global $e latest
+        done
+    fi
 
     print "\n--- Upgrade OH MY ZSH ---"
     type omz &>/dev/null && omz update

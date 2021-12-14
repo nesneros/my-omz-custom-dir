@@ -1,9 +1,0 @@
-#! /usr/bin/env bash
-
-set -e
-
-hash asdf > /dev/null || exit 0
-
-for e in direnv; do 
-    asdf install $e latest && asdf global $e latest
-done
