@@ -25,6 +25,7 @@ plugins=(
   fzf
   git
   gradle
+  macos
   ripgrep
   thefuck
   # Seperate installed plugins
@@ -37,6 +38,9 @@ plugins=(
   # gcloud must come after zsh-completions
   gcloud
 )
+
+# Remove macos plugin unless on MacOS
+[[ "$OSTYPE" = 'darwin*' ]] || plugins=("${(@)plugins:#macos}")
 
 source $ZSH/oh-my-zsh.sh
 
