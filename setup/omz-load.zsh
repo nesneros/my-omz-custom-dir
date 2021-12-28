@@ -40,7 +40,7 @@ plugins=(
 )
 
 # Remove macos plugin unless on MacOS
-[[ "$OSTYPE" = 'darwin*' ]] || plugins=("${(@)plugins:#macos}")
+[[ "$OSTYPE" == darwin* ]] || plugins=("${(@)plugins:#macos}")
 
 source $ZSH/oh-my-zsh.sh
 
