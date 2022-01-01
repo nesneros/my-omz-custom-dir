@@ -28,7 +28,7 @@ asdf-direnv-setup() {
     asdf global direnv latest
     mkdir -p $HOME/.config/direnv
     ln -s $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc ||:
-    touch $HOME/.envrc
+    #touch $HOME/.envrc
 }
 #echo "Linking dot files..."
 #linkdot "p10k.zsh"
