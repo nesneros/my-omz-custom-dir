@@ -1,5 +1,5 @@
 # check if fasd is installed
-if (( ! ${+commands[asdf]} || ! ${+commands[direnv]} )); then
+if (( ! ${+commands[asdf]} )); then
   return
 fi
 
