@@ -1,4 +1,7 @@
 if (( $+commands[codium] )) ; then
-    export VISUAL="$(which codium) -w"
+    export EDITOR="$(which codium) -w"
     alias e=codium
+elif (( $+commands[code] )) ; then
+    export EDITOR="$(which code) -w"
+    alias e=code
 fi
