@@ -1,12 +1,14 @@
 # check if fasd is installed
-if (( ! ${+commands[asdf]} )); then
+if (( ! ${+commands[asdf]} || ! ${+commands[direnv]} )); then
   return
 fi
 
 export ASDF_CONFIG_FILE=$ZSH_CUSTOM/dotfiles/asdfrc
 source $(brew --prefix asdf)/libexec/asdf.sh
 
-#export DIRENV_LOG_FORMAT=""
+
+# Uncomment the following line to make direnv silent by default.
+# export DIRENV_LOG_FORMAT=""
 
 # Use direnv instead of shims. Direnv asdf plugin must be added
 hook="$(asdf exec direnv hook zsh)"
