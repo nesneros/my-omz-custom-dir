@@ -14,7 +14,7 @@ alias+() {
 alias+ df -h
 
 # ### Disable glob for some commands
-for e in find mdfind rsync scp; do
+for e in find fd mdfind rsync scp; do
     alias "$e=noglob ${aliases[$e]:-$e}"
 done
 
@@ -63,6 +63,5 @@ typeset -U path
 autoload -U compinit && compinit
 # Define some aliases. Note gr overrides a git alias
 alias gr=gradle
-alias lg=lazygit
 
 unsetopt correctall
