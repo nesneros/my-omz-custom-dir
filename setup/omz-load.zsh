@@ -28,6 +28,7 @@ plugins=(
   macos
   ripgrep
   thefuck
+  transfer
   # Seperate installed plugins
   $(baseNameIfExist autoupdate)
   $(baseNameIfExist clipboard)
