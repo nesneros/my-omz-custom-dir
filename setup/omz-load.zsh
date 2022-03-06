@@ -13,6 +13,10 @@ baseNameIfExist() {
   fi
 }
 
+# Settings for magic-enter
+MAGIC_ENTER_GIT_COMMAND="git status -sb -u ."
+MAGIC_ENTER_OTHER_COMMAND="ls ."
+
 plugins=(
   my-init
   # Standard plugins
@@ -26,6 +30,7 @@ plugins=(
   git
   gradle
   macos
+  magic-enter
   ripgrep
   thefuck
   transfer
