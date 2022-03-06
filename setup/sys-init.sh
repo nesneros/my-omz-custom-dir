@@ -28,6 +28,7 @@ asdf-direnv-setup() {
     asdf global direnv latest
     mkdir -p $HOME/.config/direnv
     ln -s $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc ||:
+    ln -s $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml ||:
     #touch $HOME/.envrc
 }
 #echo "Linking dot files..."
