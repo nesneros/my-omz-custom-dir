@@ -23,6 +23,7 @@ plugins=(
   # asdf
   # brew
   # direnv
+  dirhistory
   docker
   # fasd
   fd
@@ -34,6 +35,7 @@ plugins=(
   ripgrep
   thefuck
   transfer
+  web-search
   # Seperate installed plugins
   $(baseNameIfExist autoupdate)
   $(baseNameIfExist clipboard)
