@@ -31,7 +31,7 @@ plugins=(
   git
   gradle
   macos
-  magic-enter
+  #magic-enter
   ripgrep
   thefuck
   transfer
