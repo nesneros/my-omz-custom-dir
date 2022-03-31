@@ -15,10 +15,10 @@ upgrade-all() {
         print "\n--- Upgrading asdf plugins ---"
         asdf plugin-update --all | grep -v "Already on '\|Your branch is up to date with"
 
-        print "\n--- Upgrading asdf install system tools ---"
-        for e in direnv; do
-            asdf install $e latest && asdf global $e latest
-        done
+        # print "\n--- Upgrading asdf install system tools ---"
+        # for e in direnv; do
+        #     asdf install $e latest && asdf global $e latest
+        # done
     fi
 
     print "\n--- Upgrade OH MY ZSH ---"
