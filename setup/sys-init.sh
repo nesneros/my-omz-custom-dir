@@ -23,10 +23,10 @@ linkdot() {
 asdf-direnv-setup() {
     echo "### Setting up asdf and direnv"
     hash brew && brew install asdf
-    asdf plugin-add direnv || :
-    asdf install direnv latest
-    asdf global direnv latest
     mkdir -p $HOME/.config/direnv
+    asdf plugin-add direnv || :
+    asdf direnv setup --version latest
+    asdf global direnv latest
     ln -s $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc ||:
     ln -s $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml ||:
     #touch $HOME/.envrc
