@@ -1,3 +1,10 @@
+_golang-setup() {
+    asdf plugin-add golang
+    asdf install golang latest
+    asdf global golang latest
+    go install golang.org/x/tools/...@latest
+}
+
 upgrade-all() {
     if hash apt-get &>/dev/null; then
         print "\n--- Upgrading APT packages ---"
@@ -19,6 +26,9 @@ upgrade-all() {
         # for e in direnv; do
         #     asdf install $e latest && asdf global $e latest
         # done
+
+        print "\n--- GO setup ---"
+        _golang-setup
     fi
 
     print "\n--- Upgrade OH MY ZSH ---"
