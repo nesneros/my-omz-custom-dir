@@ -4,6 +4,7 @@ if (( ! ${+commands[asdf]} )); then
 fi
 
 export ASDF_CONFIG_FILE=$ZSH_CUSTOM/dotfiles/asdfrc
+export ASDF_GOLANG_DEFAULT_PACKAGES_FILE=$ZSH_CUSTOM/dotfiles/default-golang-pkgs
 source $(brew --prefix asdf)/libexec/asdf.sh
 
 

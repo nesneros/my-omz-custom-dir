@@ -2,7 +2,6 @@ _golang-setup() {
     asdf plugin-add golang
     asdf install golang latest
     asdf global golang latest
-    go install golang.org/x/tools/...@latest
 }
 
 upgrade-all() {
