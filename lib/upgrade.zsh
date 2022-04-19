@@ -1,7 +1,10 @@
-_golang-setup() {
-    asdf plugin-add golang
-    asdf install golang latest
-    asdf global golang latest
+_asdf_latest() {
+    name=$1
+    asdf plugin-add $name > /dev/null 2>&1
+    if asdf install $name latest | grep -v "is already installed$" ; then
+        echo "asdf: NEW VERSION OF $name INSTALLED"
+        asdf list $name
+    fi
 }
 
 upgrade-all() {
@@ -26,8 +29,8 @@ upgrade-all() {
         #     asdf install $e latest && asdf global $e latest
         # done
 
-        print "\n--- GO setup ---"
-        _golang-setup
+        _asdf_latest golang
+        _asdf_latest direnv
     fi
 
     print "\n--- Upgrade OH MY ZSH ---"
