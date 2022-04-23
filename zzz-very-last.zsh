@@ -43,6 +43,12 @@ case "$OSTYPE" in
     (*)
 esac
 
+# Convenient function to create a dir and cd into it
+function mcd {
+    mkdir -p $1
+    cd $1
+}
+
 # Some global aliases
 alias -g B='| bat'
 alias -g F='| less +F'
