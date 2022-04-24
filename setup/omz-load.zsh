@@ -44,7 +44,7 @@ plugins=(
   # $(baseNameIfExist zsh-syntax-highlighting)
   $(baseNameIfExist fast-syntax-highlighting)
   # gcloud must come after zsh-completions
-  gcloud
+  #gcloud
 )
 
 # Remove macos plugin unless on MacOS
