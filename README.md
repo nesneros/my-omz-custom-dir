@@ -29,6 +29,11 @@ Install in OMZ/custom/plugins directory
 Install Meslo Nerd Font. See powerlevel10k readme for details.
 
 From: https://github.com/VSCodium/vscodium/blob/master/DOCS.md#extensions-marketplace
+
+To enable Meslo font in terminal in VS code add to settings something like:
+```
+ "terminal.integrated.fontFamily": "MesloLGS NF"
+```
 ### <a id="howto-vscode-marketplace"></a>How to use the VS Code Marketplace
 
 You can switch and use the VS Code marketplace by using the following solutions. However, note that [it is not clear whether this is legal](https://github.com/microsoft/vscode/issues/31168).
