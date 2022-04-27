@@ -1,7 +1,7 @@
 # Source from .zshrc to init oh-my-zsh
 # like: source $ZSH/custom/setup/omz-load.zsh
 
-export PATH=$HOME/bin/share:/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export MY_TOOLS_DIR=~/.tools
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 
