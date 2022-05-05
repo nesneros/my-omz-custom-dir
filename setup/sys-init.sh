@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-set -e
+set -e          
 
 cd $(dirname $0)/..
 
@@ -24,9 +24,11 @@ asdf-direnv-setup() {
     echo "### Setting up asdf and direnv"
     hash brew && brew install asdf
     mkdir -p $HOME/.config/direnv
+    pushd $HOME
     asdf plugin-add direnv || :
     asdf direnv setup --version latest
     asdf global direnv latest
+    popd
     ln -s $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc ||:
     ln -s $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml ||:
     #touch $HOME/.envrc
