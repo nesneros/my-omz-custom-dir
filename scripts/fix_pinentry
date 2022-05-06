@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+set -e
+
+# Mac specific, it uses Mac pin entry program
+
+pkill gpg-agent
+gpg-agent --pinentry-program=$(which pinentry-mac) --daemon
