@@ -1,4 +1,9 @@
-hash gpg &>/dev/null || return
+if (( ${+commands[gh]} )); then
+    # eval $(gh completion -s zsh)
+    alias gh_auth="github_token | gh auth login --with-token && gh auth status"
+fi
+
+(( ${+commands[gpg]} )) || return
 
 [ -f ~/.github_token.asc ] && export GITHUB_TOKEN_ASC_FILE=~/.github_token.asc
 
@@ -20,7 +25,7 @@ if hash hub &>/dev/null; then
 fi
 
 if hash goreleaser &>/dev/null; then
-    gorel() {
+    github_gorel() {
         token=$(github_token)
         if [ -z "$token" ]; then
             goreleaser "$@"
