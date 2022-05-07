@@ -23,7 +23,8 @@ for e in ag cp grep ln mv; do
     alias "$e=nocorrect ${aliases[$e]:-$e}"
 done
 
-alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias myip='echo $(curl -s http://whatismyip.akamai.com/)'
+# alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 function _makesudo {
     if type "$1" >/dev/null ; then
