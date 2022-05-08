@@ -26,13 +26,13 @@ plugins=(
   dirhistory
   docker
   # fasd
-  fd
+  # fd
   fzf
   git
   gradle
   macos
-  #magic-enter
-  ripgrep
+  # magic-enter
+  # ripgrep
   thefuck
   transfer
   web-search
