@@ -50,6 +50,10 @@ function mcd {
     cd $1
 }
 
+# gor alias is define for golang plugin. Redefined it here to use parsepanic
+if typeset -f gorunpp > /dev/null ; then
+    alias gor=gorunpp
+fi
 # Some global aliases
 alias -g B='| bat'
 alias -g F='| less +F'

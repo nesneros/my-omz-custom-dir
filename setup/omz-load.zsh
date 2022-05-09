@@ -29,6 +29,7 @@ plugins=(
   # fd
   fzf
   git
+  golang
   gradle
   macos
   # magic-enter

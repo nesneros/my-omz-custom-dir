@@ -1,6 +1,13 @@
 # https://github.com/maruel/panicparse
 # Default panicparse is installed as 'pp'. For installation use: go install github.com/maruel/panicparse/v2@latest
-alias -g PP="|& panicparse"
+
+if (( ${+commands[panicparse]} )) ; then
+    alias -g PP="|& panicparse"
+    
+    function gorunpp {
+        go run "$@" |& panicparse
+    }
+fi
 
 export GOTRACEBACK=all
 
