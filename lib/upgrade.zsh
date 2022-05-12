@@ -15,7 +15,8 @@ upgrade-all() {
 
     if hash brew &>/dev/null; then
         print "\n--- Upgrading brews ---"
-        brew upgrade --cask --greedy
+        # brew upgrade --cask --greedy
+        brew upgrade --cask
         brew upgrade
         brew cleanup
     fi
