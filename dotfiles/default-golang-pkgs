@@ -1,3 +1,4 @@
-golang.org/x/tools/...@v0.1.10
-github.com/josharian/impl@lv1.1.0
-github.com/golangci/golangci-lint/cmd/golangci-lint@v1.45.2
+golang.org/x/tools/...@latest
+github.com/josharian/impl@v1.1.0
+github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+github.com/maruel/panicparse/v2@latest
