@@ -10,19 +10,9 @@ Install in OMZ/custom/plugins directory
 * zsh-completions
 * fast-syntax-highlighting
 
-## asdf
-
-* Create .envrc in homedir to put asdf managed tools on path (and not use shims)
-
 ## Other installs
 
-* asdf
-* fasd
-* fzf
 * p10k prompt
-* thefuck
-
-## Notes
 
 ### Fonts
 
@@ -80,4 +70,3 @@ eval $(/opt/homebrew/bin/brew shellenv)
 ssh-add --apple-use-keychain ~/.ssh/id_rsa
 hash fortune 2> /dev/null && echo && fortune
 ```
-
