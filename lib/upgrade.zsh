@@ -39,4 +39,6 @@ upgrade-all() {
 
     print "\n--- Upgrade Custom OH MY ZSH ---"
     type upgrade_oh_my_zsh_custom &>/dev/null && upgrade_oh_my_zsh_custom
+
+    omz reload
 }
