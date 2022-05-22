@@ -24,6 +24,16 @@ To enable Meslo font in terminal in VS code add to settings something like:
 ```
  "terminal.integrated.fontFamily": "MesloLGS NF"
 ```
+### GPG and Keychain
+
+Disable option to save GPG passphrase in Keychain: 
+
+```
+
+defaults write org.gpgtools.common DisableKeychain -bool yes
+
+```
+
 ### <a id="howto-vscode-marketplace"></a>How to use the VS Code Marketplace
 
 You can switch and use the VS Code marketplace by using the following solutions. However, note that [it is not clear whether this is legal](https://github.com/microsoft/vscode/issues/31168).
