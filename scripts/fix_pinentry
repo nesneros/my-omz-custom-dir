@@ -2,7 +2,9 @@
 
 set -e
 
+gpg-connect-agent reloadagent /bye
+
 # Mac specific, it uses Mac pin entry program
 
-pkill gpg-agent
-gpg-agent --pinentry-program=$(which pinentry-mac) --daemon
+#pkill gpg-agent
+#gpg-agent --pinentry-program=$(which pinentry-mac) --daemon
