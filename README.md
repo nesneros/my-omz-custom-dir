@@ -1,5 +1,14 @@
 # my-omz-custom-dir
 
+## Setup Steps
+
+* Install brew
+* Install omz
+* clone this into custom dir of omz
+* install brew bundle
+* execute customer sys-init
+* Update .zshrc (select no theme, load omz)
+
 ## External Plugins
 
 Install in OMZ/custom/plugins directory
