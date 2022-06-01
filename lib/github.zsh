@@ -9,7 +9,7 @@ fi
 
 github_token() {
     if [ -f "$GITHUB_TOKEN_ASC_FILE" ]; then
-        gpg <"$GITHUB_TOKEN_ASC_FILE" 2>/dev/null
+        gpg -d "$GITHUB_TOKEN_ASC_FILE" 2>/dev/null
     fi
 }
 
