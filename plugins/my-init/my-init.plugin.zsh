@@ -7,7 +7,7 @@ alias+() {
 
 # Look for brew installations and init
 if [[ -z "$HOMEBREW_PREFIX" ]] ; then
-  brewLocations=(/opt/homebrew /home/linuxbrew/.linuxbrew)
+  brewLocations=(/opt/homebrew /usr/local /home/linuxbrew/.linuxbrew)
   for e in $brewLocations; do
     brewBin=$e/bin/brew
     if [[ -x "$brewBin" ]] ; then
