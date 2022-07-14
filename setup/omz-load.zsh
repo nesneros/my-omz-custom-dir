@@ -25,7 +25,6 @@ plugins=(
   # direnv
   dirhistory
   docker
-  # fasd
   # fd
   fzf
   git
@@ -37,6 +36,7 @@ plugins=(
   thefuck
   transfer
   web-search
+  zoxide
   # Seperate installed plugins
   $(baseNameIfExist autoupdate)
   $(baseNameIfExist clipboard)
