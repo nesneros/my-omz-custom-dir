@@ -63,6 +63,7 @@ alias -g H='| head'
 alias -g L='| less'
 alias -g S='| sort'
 alias -g T='| tail -100f'
+alias -g P='| peco'
 # Colorize json
 alias -g J='|jq .'
 
