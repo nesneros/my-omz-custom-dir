@@ -8,4 +8,11 @@ if (( $+commands[kubectl] )); then
     [[ -f $__KUBECTL_COMPLETION_FILE ]] && source $__KUBECTL_COMPLETION_FILE
 
     unset __KUBECTL_COMPLETION_FILE
+
+    alias kc=kubectl
+
+    if [ -d $HOME/.krew/bin ] ; then
+        export PATH="${HOME}/.krew/bin:$PATH"
+        eval $(kubectl krew completion zsh)
+    fi
 fi
