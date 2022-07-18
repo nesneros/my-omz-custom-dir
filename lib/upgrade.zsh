@@ -34,6 +34,12 @@ upgrade-all() {
         _asdf_latest direnv
     fi
 
+    if hash kubectl >/dev/null && [ -d $HOME/.krew/bin ]; then
+        print "\n--- Upgrading kubectl krew ---"
+        kubectl krew update
+        kubectl krew upgrade 2>&1 | grep -v "it is already on the newest version$"    
+    fi
+
     print "\n--- Upgrade OH MY ZSH ---"
     type omz &>/dev/null && omz update
 
