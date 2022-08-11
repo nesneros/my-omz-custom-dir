@@ -25,7 +25,7 @@ if hash delta >/dev/null; then
     git config --global delta.side-by-side false
     git config --global delta.interactive.keep-plus-minus-markers false
 
-    alias aliases "!git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'"
+    alias aliases "!git config --get-regexp alias | sed -re 's/^alias\.([a-z-]+) /\1:\t/g' | column -t -s $'\t'"
     alias s "status --short"
     alias lg "log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'"
     alias hide "update-index --assume-unchanged"
