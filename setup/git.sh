@@ -26,8 +26,13 @@ if hash delta >/dev/null; then
     git config --global delta.interactive.keep-plus-minus-markers false
 
     alias aliases "!git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'"
-    alias s status
+    alias s "status --short"
     alias lg "log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'"
+    alias hide "update-index --assume-unchanged"
+    alias hide-all "!git diff --name-only | xargs git hide"
+    alias unhide "update-index --no-assume-unchanged"
+    alias hidden "!git ls-files -v | grep '^[[:lower:]]' | cut -c 3-"
+    alias unhide-all "!git hidden | xargs git update-index --no-assume-unchanged"
 fi
 
 #git config --global mergetool.smerge.cmd 'smerge mergetool "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"'
