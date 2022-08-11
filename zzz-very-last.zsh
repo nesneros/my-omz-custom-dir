@@ -72,7 +72,7 @@ alias+ pgrep -fli
 # Remove duplicates from PATH
 typeset -U path
 
-autoload -U compinit && compinit
+# autoload -U compinit && compinit
 # Define some aliases. Note gr overrides a git alias
 alias gr=gradle
 
