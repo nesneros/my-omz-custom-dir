@@ -28,3 +28,8 @@ _it2setColor() {
 _it2control() {
     echo -e "\033]$1\a"
 }
+
+# Iterm2 shell integration can be installed from the iterm2 menu. 
+if [ -f "$HOME/.iterm2_shell_integration.zsh" ]; then
+    source "$HOME/.iterm2_shell_integration.zsh"
+fi
