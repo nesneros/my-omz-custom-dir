@@ -53,5 +53,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# TODO ensure ZSH_COMPDUMP is defined
-autoload -U compinit && compinit -u -d "$ZSH_COMPDUMP"
+autoload -U compinit
+if [ -n "$ZSH_COMPDUMP" ]; then
+  compinit -u -d "$ZSH_COMPDUMP"
+else
+  compinit -u 
+fi
+
