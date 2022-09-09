@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-set -e          
+set -e
 
 cd $(dirname $0)/..
 
@@ -27,12 +27,13 @@ asdf-direnv-setup() {
     pushd $HOME
     asdf plugin-add direnv || :
     asdf direnv setup --version latest
-    asdf global direnv latest
+    #asdf global direnv latest
     popd
-    ln -s $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc ||:
-    ln -s $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml ||:
+    ln -s $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc || :
+    ln -s $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml || :
     #touch $HOME/.envrc
 }
+
 #echo "Linking dot files..."
 #linkdot "p10k.zsh"
 
@@ -43,3 +44,12 @@ git config --global core.excludesfile $(
 )/gitignore_global
 
 asdf-direnv-setup
+
+if [ -d $HOME/.config/kitty ]; then
+    echo "### Linking kitty config"
+    ln -s $dotFilesDir/kitty.d $HOME/.config/kitty || :
+
+    echo
+    echo "### MANUAL ACTION ###"
+    echo "Add 'globinclude kitty.d/*.conf' to $HOME/.config/kitty/kitty.conf"
+fi
