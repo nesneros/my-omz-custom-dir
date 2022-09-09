@@ -28,6 +28,8 @@ if hash delta >/dev/null; then
     alias aliases "!git config --get-regexp alias | sed -re 's/^alias\.([a-z-]+) /\1:\t/g' | column -t -s $'\t'"
     alias s "status --short"
     alias lg "log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'"
+    alias wt "worktree"
+
     alias hide "update-index --assume-unchanged"
     alias hide-all "!git diff --name-only | xargs git hide"
     alias unhide "update-index --no-assume-unchanged"
