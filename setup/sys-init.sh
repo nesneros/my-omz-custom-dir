@@ -44,12 +44,3 @@ git config --global core.excludesfile $(
 )/gitignore_global
 
 asdf-direnv-setup
-
-if [ -d $HOME/.config/kitty ]; then
-    echo "### Linking kitty config"
-    ln -s $dotFilesDir/kitty.d $HOME/.config/kitty || :
-
-    echo
-    echo "### MANUAL ACTION ###"
-    echo "Add 'globinclude kitty.d/*.conf' to $HOME/.config/kitty/kitty.conf"
-fi
