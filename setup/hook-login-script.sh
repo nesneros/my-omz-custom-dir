@@ -4,7 +4,8 @@ set -e
 
 # Only implemented for MacOS
 
-ZSH_CUSTOM=$(cd "$(dirname -- "${BASH_SOURCE[0]}/..")" ; pwd)
+setupDir=$(dirname -- "${BASH_SOURCE[0]}")/..
+ZSH_CUSTOM=$(cd $setupDir ; pwd)
 name=omz.Custom.LoginScript
 
 d=$(mktemp -d)
@@ -34,11 +35,12 @@ cat << EOF > $tmp
 </plist>
 EOF
 
-cat $tmp > $HOME/Library/LaunchAgents/$name.plist
-cat $tmp
+# cat $tmp
 
 launchctl remove $name ||:
-launchctl load -w "$tmp"
+#launchctl load -w "$tmp"
 
-# rm -f "$tmp"
+cat $tmp > $HOME/Library/LaunchAgents/$name.plist
+
+rm -f "$tmp"
 rmdir $d
