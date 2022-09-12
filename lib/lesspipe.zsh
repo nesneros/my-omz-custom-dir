@@ -2,4 +2,4 @@ if (( ! ${+commands[lesspipe.sh]} )); then
   return
 fi
 
-lesspipe.sh | source /dev/stdin
+eval $(lesspipe.sh 2> /dev/null)

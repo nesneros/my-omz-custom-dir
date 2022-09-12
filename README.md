@@ -6,7 +6,7 @@
 * Install omz
 * clone this into custom dir of omz
 * install brew bundle
-* execute customer sys-init
+* execute custom sys-init
 * Update .zshrc (select no theme, load omz)
 
 ## External Plugins
@@ -19,9 +19,9 @@ Install in OMZ/custom/plugins directory
 * zsh-completions
 * fast-syntax-highlighting
 
-## Other installs
+## P10K prompt
 
-* p10k prompt
+Instant prompt is enabled via omz-load.zsh
 
 ### Fonts
 
