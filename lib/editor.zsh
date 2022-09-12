@@ -1,7 +1,7 @@
 if (( $+commands[codium] )) ; then
-    export EDITOR="$(which codium) -w"
-    alias e=codium
+    export VEDITOR=$(which codium)
+    export EDITOR="$VEDITOR -w"
 elif (( $+commands[code] )) ; then
-    export EDITOR="$(which code) -w"
-    alias e=code
+    export VEDITOR=$(which code)
+    export EDITOR="$VEDITOR -w"
 fi
