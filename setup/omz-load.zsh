@@ -6,12 +6,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [ -z "$ZSH_CUSTOM" ] ; then
+  echo "ZSH_CUSTOM is not set"
+fi
+export ZSH_CUSTOM
+
 export PATH=$HOME/bin:$PATH
 export MY_TOOLS_DIR=~/.tools
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 baseNameIfExist() {
-  local customPluginDir="$ZSH/custom/plugins"
+  local customPluginDir="$ZSH_CUSTOM/plugins"
   local dir="$customPluginDir/$1"
   if [[ -d "$dir" ]]; then
     print $1
