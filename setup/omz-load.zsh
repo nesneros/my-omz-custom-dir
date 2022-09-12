@@ -6,10 +6,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [ -z "$ZSH_CUSTOM" ] ; then
-  echo "ZSH_CUSTOM is not set"
+if [ -z "$ZSH_CUSTOM" ]; then
+  echo "ZSH_CUSTOM is not set" >&2
+  read && exit 1
 fi
-export ZSH_CUSTOM
+if [ ! -d "$ZSH_CUSTOM/setup" ]; then
+  echo "ZSH_CUSTOM not found: $ZSH_CUSTOM" >&2
+  read
+  exit 1
+fi
+export ZSH_CUSTOM 
 
 export PATH=$HOME/bin:$PATH
 export MY_TOOLS_DIR=~/.tools
