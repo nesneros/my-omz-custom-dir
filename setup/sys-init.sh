@@ -44,3 +44,5 @@ git config --global core.excludesfile $(
 )/gitignore_global
 
 asdf-direnv-setup
+
+./setup/hook-login-script.sh
