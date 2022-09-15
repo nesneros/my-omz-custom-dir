@@ -64,6 +64,7 @@ alias -g L='| less'
 alias -g S='| sort'
 alias -g T='| tail -100f'
 alias -g P='| peco'
+alias -g Z='| fzf --tac'
 # Colorize json
 alias -g J='|jq .'
 
@@ -74,6 +75,6 @@ typeset -U path
 
 # autoload -U compinit && compinit
 # Define some aliases. Note gr overrides a git alias
-alias gr=gradle
+# alias gr=gradle
 
 unsetopt correctall
