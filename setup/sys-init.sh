@@ -29,8 +29,8 @@ asdf-direnv-setup() {
     asdf direnv setup --version latest
     #asdf global direnv latest
     popd
-    ln -s $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc || :
-    ln -s $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml || :
+    ln -sf $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc || :
+    ln -sf $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml || :
     #touch $HOME/.envrc
 }
 
