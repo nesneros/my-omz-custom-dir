@@ -17,8 +17,18 @@ if [ ! -d "$ZSH_CUSTOM/setup" ]; then
 fi
 export ZSH_CUSTOM 
 
+# If ZSH not set try to detect it
+if [ -z "$ZSH" ]; then
+  if [ -f "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]; then
+    ZSH="$HOME/.oh-my-zsh"
+  else
+    echo "ZSH not found" >&2
+    read && exit 1
+  fi
+fi
+export ZSH
+
 export PATH=$HOME/bin:$PATH
-export MY_TOOLS_DIR=~/.tools
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 baseNameIfExist() {
