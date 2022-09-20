@@ -1,0 +1,41 @@
+#!/usr/bin/env bash 
+
+set -e
+
+remote=${GIT_DEFAULT_REMOTE:-origin}
+baseCommit=${GIT_MAIN_BRANCH:-main}
+
+name=$1
+setupScript=$2
+[ -z "$setupScript" ] && setupScript=$WT_SETUP_SCRIPT
+
+usage() {
+    echo "Usage: git-wt-setup <name> [setup-script]"
+    echo
+    echo "  name: Name of the worktree"
+    echo "  setup-script: Script to run after creating the worktree"
+    echo
+    echo "  GIT_DEFAULT_REMOTE: Default remote to use (default: origin)"
+    echo "  GIT_MAIN_BRANCH: Default branch to use (default: main)"
+    echo "  WT_SETUP_SCRIPT: Default setup script to use"
+}
+
+[ -z "$name" ] && usage && exit 1
+
+gitRepo=$(git-main-repo)
+dir="$(dirname "$gitRepo")/wt/$name"
+
+echo "Creating Git worktree based on: $remote:$baseCommit"
+echo "  branch: $name"
+echo "  dir: $dir"
+
+git fetch "$remote" "$baseCommit"
+git worktree add --no-track -b "$name" "$dir" "${remote}/${baseCommit}"
+if [ -n "$setupScript" ]; then
+    echo "Running setup script: $setupScript"
+    echo
+    "$setupScript" "$dir"
+    echo
+    echo "Setup script finished"
+fi
+e "$dir"
