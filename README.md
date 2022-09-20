@@ -4,7 +4,7 @@
 
 * Install brew
 * Install omz
-* clone this into custom dir of omz
+* clone this
 * install brew bundle
 * execute custom sys-init
 * Update .zshrc (select no theme, load omz)
@@ -89,11 +89,3 @@ Consider disable direnv logging. P10K's instant prompt will appreciate that
 export DIRENV_LOG_FORMAT=""
 ```
 Note that direnv logging can be enabled on a per directory basis
-
-
-Other ideas for .zprofile:
-```
-eval $(/opt/homebrew/bin/brew shellenv)
-ssh-add --apple-use-keychain ~/.ssh/id_rsa
-hash fortune 2> /dev/null && echo && fortune
-```
