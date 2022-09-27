@@ -22,6 +22,7 @@ if hash hub &>/dev/null; then
             GITHUB_TOKEN=$token command hub "$@"
         fi
     }
+    alias g=hub
 fi
 
 if hash goreleaser &>/dev/null; then
