@@ -27,11 +27,11 @@ asdf-direnv-setup() {
     pushd $HOME
     asdf plugin-add direnv || :
     asdf direnv setup --version latest
-    #asdf global direnv latest
+    asdf global direnv latest
     popd
     ln -sf $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc || :
     ln -sf $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml || :
-    #touch $HOME/.envrc
+    touch $HOME/.envrc
 }
 
 #echo "Linking dot files..."

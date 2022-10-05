@@ -5,14 +5,18 @@ set -e
 # Only implemented for MacOS
 
 setupDir=$(dirname -- "${BASH_SOURCE[0]}")/..
-ZSH_CUSTOM=$(cd $setupDir ; pwd)
+ZSH_CUSTOM=$(
+    cd $setupDir
+    pwd
+)
 name=omz.Custom.LoginScript
 
-d=$(mktemp -d)
-tmp=/tmp/file.plist
 loginScript=$ZSH_CUSTOM/dotfiles/login.sh
 
-cat << EOF > $tmp
+if [[ $OSTYPE == darwin* ]]; then
+    d=$(mktemp -d)
+    tmp=/tmp/file.plist
+    cat <<EOF >$tmp
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -35,12 +39,13 @@ cat << EOF > $tmp
 </plist>
 EOF
 
-# cat $tmp
+    # cat $tmp
 
-launchctl remove $name ||:
-#launchctl load -w "$tmp"
+    launchctl remove $name || :
+    #launchctl load -w "$tmp"
 
-cat $tmp > $HOME/Library/LaunchAgents/$name.plist
+    cat $tmp >$HOME/Library/LaunchAgents/$name.plist
 
-rm -f "$tmp"
-rmdir $d
+    rm -f "$tmp"
+    rmdir $d
+fi
