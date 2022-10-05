@@ -1,16 +1,22 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
 set -e
 
 remote=${GIT_DEFAULT_REMOTE:-origin}
 baseCommit=${GIT_MAIN_BRANCH:-main}
 
+# Check for flags: --remove, --setup
+if [[ $1 == "--remove" ]]; then
+    remove=1
+    shift
+fi
+
 name=$1
 setupScript=$2
 [ -z "$setupScript" ] && setupScript=$WT_SETUP_SCRIPT
 
 usage() {
-    echo "Usage: git-wt-setup <name> [setup-script]"
+    echo "Usage: git-wt-setup [--remove] <name> [setup-script]"
     echo
     echo "  name: Name of the worktree"
     echo "  setup-script: Script to run after creating the worktree"
@@ -22,20 +28,57 @@ usage() {
 
 [ -z "$name" ] && usage && exit 1
 
+# It $name is a direcotory then use that as the worktree
+if [[ -d $name ]]; then
+    name=$(basename $name)
+fi
+
 gitRepo=$(git-main-repo)
 dir="$(dirname "$gitRepo")/wt/$name"
 
-echo "Creating Git worktree based on: $remote:$baseCommit"
-echo "  branch: $name"
-echo "  dir: $dir"
+ask() {
+    echo -n "Continue? [y/N] "
+    read -r answer
+    if [[ $answer == "y" ]]; then
+        return 0
+    else
+        exit 1
+    fi
+}
 
-git fetch "$remote" "$baseCommit"
-git worktree add --no-track -b "$name" "$dir" "${remote}/${baseCommit}"
-if [ -n "$setupScript" ]; then
-    echo "Running setup script: $setupScript"
-    echo
-    "$setupScript" "$dir"
-    echo
-    echo "Setup script finished"
+setup() {
+    echo "Creating Git worktree based on: $remote:$baseCommit"
+    echo "  branch: $name"
+    echo "  dir: $dir"
+    ask
+
+    git fetch "$remote" "$baseCommit"
+    git worktree add --no-track -b "$name" "$dir" "${remote}/${baseCommit}"
+    if [ -n "$setupScript" ]; then
+        echo "Running setup script: $setupScript"
+        echo
+        "$setupScript" "$dir"
+        echo
+        echo "Setup script finished"
+    fi
+    e "$dir"
+}
+
+remove() {
+    branch=$(git -C "$dir" branch --show-current)
+    echo "Removing Git worktree: $name"
+    echo "  branch: $branch"
+    echo "  dir: $dir"
+    ask
+
+    # Remove worktree
+    git worktree remove "$dir"
+    # Remove branch
+    git branch -D "$branch"
+}
+
+if [ -n "$remove" ]; then
+    remove
+else
+    setup
 fi
-e "$dir"
