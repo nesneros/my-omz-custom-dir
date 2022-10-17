@@ -1,7 +1,7 @@
 _asdf_latest() {
     name=$1
-    asdf plugin-add $name > /dev/null 2>&1
-    if asdf install $name latest | grep -v "is already installed$" ; then
+    asdf plugin-add $name >/dev/null 2>&1
+    if asdf install $name latest | grep -v "is already installed$"; then
         echo "asdf: NEW VERSION OF $name INSTALLED"
         asdf list $name
     fi
@@ -34,9 +34,9 @@ upgrade-all() {
         _asdf_latest direnv
     fi
 
-    if hash kubectl >/dev/null && [ -d $HOME/.krew/bin ]; then
+    if hash kubectl &>/dev/null && [ -d $HOME/.krew/bin ]; then
         print "\n--- Upgrading kubectl krew ---"
-        kubectl krew upgrade 2>&1 | grep -v "it is already on the newest version$"    
+        kubectl krew upgrade 2>&1 | grep -v "it is already on the newest version$"
     fi
 
     print "\n--- Upgrade OH MY ZSH ---"
