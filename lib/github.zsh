@@ -7,12 +7,6 @@ fi
 
 [ -f ~/.github_token.asc ] && export GITHUB_TOKEN_ASC_FILE=~/.github_token.asc
 
-github_token() {
-    if [ -f "$GITHUB_TOKEN_ASC_FILE" ]; then
-        gpg -d "$GITHUB_TOKEN_ASC_FILE" 2>/dev/null
-    fi
-}
-
 if hash hub &>/dev/null; then
     hub() {
         token=$(github_token)
