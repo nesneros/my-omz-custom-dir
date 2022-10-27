@@ -1,12 +1,12 @@
 #! /bin/sh
-# 
+#
 # Will open an editor on stdin, and when save write it to stdout.
 #
 
 temp=$(mktemp)
 trap 'rm -f "$temp"; exit' 0 1 2 3 14
 
-cat > "$temp" 
+cat >"$temp"
 
 #
 # change input to the keyboard for the edit

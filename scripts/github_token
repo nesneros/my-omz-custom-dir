@@ -2,7 +2,7 @@
 
 if [ -f "$GITHUB_TOKEN_ASC_FILE" ]; then
     gpg -d "$GITHUB_TOKEN_ASC_FILE" 2>/dev/null
-else 
-    echo "No Github token file" > /dev/stderr
+else
+    echo "No Github token file" >/dev/stderr
     exit 1
 fi

@@ -22,5 +22,5 @@ DEST="$2"
 [[ -d "$DEST" ]] && DEST="$DEST/$BASESRC"
 DEST=${DEST:a}
 
-mv "$SRC" "$DEST"  
+mv "$SRC" "$DEST"
 ln -s "$DEST" "$SRC"
