@@ -1,5 +1,6 @@
 # Sourced during login
-echo "LOGIN $(date) - ${OSTYPE} - ${ZSH_CUSTOM}" >> /tmp/login.log
+
+#echo "LOGIN $(date) - ${OSTYPE} - ${ZSH_CUSTOM}" >> /tmp/login.log
 
 # Set env vars that will be be set when launching apps on macos
 setenv() {
