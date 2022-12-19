@@ -5,8 +5,6 @@ fi
 
 (( ${+commands[gpg]} )) || return
 
-[ -f ~/.github_token.asc ] && export GITHUB_TOKEN_ASC_FILE=~/.github_token.asc
-
 if hash hub &>/dev/null; then
     hub() {
         token=$(github_token)
