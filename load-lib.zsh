@@ -1,14 +1,11 @@
 # Auto detect some local configs
 
-for dir ($HOME/.crypt $HOME/Documents/.qrypt); do
-  if [ -d "$dir" ] ; then
-     export QRYPT_DIR="$dir"
-  fi
-done
+searchDirs=($HOME $HOME/Documents)
 
-for f ($HOME/.github_token.asc $HOME/Documents/.github_token.asc); do
-  if [ -f "$f" ] ; then
-     export GITHUB_TOKEN_ASC_FILE="$f"
+for dir in $searchDirs; do
+  if [ -d "$dir" ] ; then
+    [ -z "$QRYPT_DIR" ] && [ -d "$dir/.qrypt" ] && export QRYPT_DIR="$dir/.qrypt"
+    [ -z "$GITHUB_TOKEN_ASC_FILE" ] && [ -f "$dir/.github_token.asc" ] && export GITHUB_TOKEN_ASC_FILE="$dir/.github_token.asc"
   fi
 done
 
