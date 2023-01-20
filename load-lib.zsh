@@ -6,6 +6,7 @@ for dir in $searchDirs; do
   if [ -d "$dir" ] ; then
     [ -z "$QRYPT_DIR" ] && [ -d "$dir/.qrypt" ] && export QRYPT_DIR="$dir/.qrypt"
     [ -z "$GITHUB_TOKEN_ASC_FILE" ] && [ -f "$dir/.github_token.asc" ] && export GITHUB_TOKEN_ASC_FILE="$dir/.github_token.asc"
+    [ -z "$GITLAB_TOKEN_ASC_FILE" ] && [ -f "$dir/.gitlab_token.asc" ] && export GITLAB_TOKEN_ASC_FILE="$dir/.gitlab_token.asc"
   fi
 done
 

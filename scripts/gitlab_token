@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+if [ -f "$GITLAB_TOKEN_ASC_FILE" ]; then
+    gpg -d "$GITLAB_TOKEN_ASC_FILE" 2>/dev/null
+else
+    echo "No Gitlab token file" >/dev/stderr
+    exit 1
+fi
