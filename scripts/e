@@ -1,4 +1,13 @@
 #!/bin/sh
 
-cd "${1:-.}"
-exec "$VEDITOR" . >/tmp/editor-log 2>&1 &
+arg="${1:-.}"
+
+if [ -d "$arg" ]; then
+    cd "$arg"
+    exec "$VEDITOR" . >/tmp/editor-log 2>&1 &
+elif [ -f "$arg" ]; then
+    exec "$VEDITOR" "$arg" >/tmp/editor-log 2>&1 &
+else
+    echo "No such file or directory: $arg"
+    exit 1
+fi
