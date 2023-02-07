@@ -25,13 +25,8 @@ upgrade-all() {
         print "\n--- Upgrading asdf plugins ---"
         asdf plugin-update --all | grep -v "Already on '\|Your branch is up to date with"
 
-        # print "\n--- Upgrading asdf install system tools ---"
-        # for e in direnv; do
-        #     asdf install $e latest && asdf global $e latest
-        # done
-
         _asdf_latest golang
-        _asdf_latest direnv
+        # _asdf_latest direnv
     fi
 
     if hash kubectl &>/dev/null && [ -d $HOME/.krew/bin ]; then

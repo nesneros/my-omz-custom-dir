@@ -26,8 +26,8 @@ asdf-direnv-setup() {
     mkdir -p $HOME/.config/direnv
     pushd $HOME
     asdf plugin-add direnv || :
-    asdf direnv setup --version latest
-    asdf global direnv latest
+    asdf direnv setup --shell zsh --version system
+    #asdf global direnv latest
     popd
     ln -sf $dotFilesDir/direnvrc $HOME/.config/direnv/direnvrc || :
     ln -sf $dotFilesDir/direnv.toml $HOME/.config/direnv/direnv.toml || :
