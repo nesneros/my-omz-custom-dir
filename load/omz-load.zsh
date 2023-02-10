@@ -1,6 +1,8 @@
 # Source from .zshrc to init oh-my-zsh
 # like: source $ZSH/custom/setup/omz-load.zsh
 
+export POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 if [ -z "$ZSH_CUSTOM" ]; then
   echo "ZSH_CUSTOM is not set" >&2
   read && exit 1
