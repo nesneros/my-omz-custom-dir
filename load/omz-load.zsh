@@ -16,12 +16,11 @@ export ZSH_CUSTOM
 source $ZSH_CUSTOM/load/brew-load.zsh
 
 # Enable instant prompt for p10k
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
-
+# (( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
+# (( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 
 # If ZSH not set try to detect it
