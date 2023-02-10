@@ -40,5 +40,25 @@ upgrade-all() {
     print "\n--- Upgrade Custom OH MY ZSH ---"
     type upgrade_oh_my_zsh_custom &>/dev/null && upgrade_oh_my_zsh_custom
 
+    print "\n--- Upgrade completions ---"
+    upgrade-completions
+
     omz reload
+}
+
+upgrade-completions() {
+    destDir=/usr/local/share/zsh/site-functions
+
+    _gen-comp $destDir kubectl-krew
+    _gen-comp $destDir jira
+    _gen-comp $destDir kubectl
+}
+
+_gen-comp() {
+    cmd=$2
+    destFile="$1/_$cmd"
+    if (( ${+commands[$cmd]} )) ; then
+        echo "Generating completion for $cmd to $destFile"
+        $cmd completion zsh > "$destFile"
+    fi
 }
