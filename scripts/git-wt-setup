@@ -69,10 +69,16 @@ remove() {
     echo "Removing Git worktree: $name"
     echo "  branch: $branch"
     echo "  dir: $dir"
+    if git -C "$dir" diff --quiet ; then
+        echo "  No changes in worktree"
+    else
+        echo "*** Changes in worktree: ***"
+        git -C "$dir" status --short | head -n 20
+    fi
     ask
 
     # Remove worktree
-    git worktree remove "$dir"
+    git worktree remove --force "$dir"
     # Remove branch
     git branch -D "$branch"
 }
