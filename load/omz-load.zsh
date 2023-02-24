@@ -55,6 +55,7 @@ plugins=(
   my-init
   # Standard plugins
   # asdf
+  aws
   # brew
   # direnv
   dirhistory
