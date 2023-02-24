@@ -35,18 +35,9 @@ To enable Meslo font in terminal in VS code add to settings something like:
 ```
 ### GPG and Keychain
 
-Disable option to save GPG passphrase in Keychain: 
-
-```
-
-defaults write org.gpgtools.common DisableKeychain -bool yes
-
-```
-
 Update ~/.gnupg/gpgagent.conf:
 
 ```
-
 pinentry-program /opt/homebrew/bin/pinentry-mac
 ```
 
