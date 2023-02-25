@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e 
+
+currentBranchName=$(git branch --show-current)
+prefix=$(git config --get "branch.$currentBranchName.msgPrefix") ||:
+# echo "currentBranchName: $currentBranchName, 1: $1, 2: $2" >> /tmp/git-commit-msg-hook.txt
+
+[ -z "$prefix" ] && exit 0
+
+
+msgFile="$1"
+msg=$(cat $msgFile)
+echo "${prefix}${msg}" > "$msgFile"
