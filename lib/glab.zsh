@@ -1,7 +1,7 @@
 (( ${+commands[glab]} )) || return
 
 glab() {
-    token=$(gitlab_token)
+    token=$(api_token gitlab)
     if [ -z "$token" ]; then
         command glab "$@"
     else
