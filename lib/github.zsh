@@ -5,7 +5,7 @@ fi
 
 (( ${+commands[gpg]} )) || return
 
-alias github_token='api_token github
+alias github_token='api-token github
 '
 if hash hub &>/dev/null; then
     hub() {

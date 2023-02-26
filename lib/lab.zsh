@@ -2,7 +2,7 @@
 
 export LAB_CORE_HOST="https://gitlab.com"
 lab() {
-    token=$(api_token gitlab)
+    token=$(api-token gitlab)
     if [ -z "$token" ]; then
         command lab "$@"
     else
