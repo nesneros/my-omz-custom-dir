@@ -1,9 +1,6 @@
 # By naming convention this is the last setup script processed. It (among others) defines some global aliases which could
 # potentially make some plugins not load correctly
 
-# Add scripts dir to PATH
-PATH=$ZSH_CUSTOM/scripts:$PATH
-
 # Inspired by Zoppo
 # Create an alias for a command with some options.
 # Either create new alias or add options to existing alias

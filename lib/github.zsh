@@ -1,31 +1,12 @@
+if tmp=$(api-token github 2> /dev/null) ; then
+    export GITHUB_TOKEN=$tmp
+fi
+
 if (( ${+commands[gh]} )); then
     # eval $(gh completion -s zsh)
-    alias gh_auth="github_token | gh auth login --with-token && gh auth status"
+    alias gh_auth="api-token github | gh auth login --with-token && gh auth status"
 fi
 
-(( ${+commands[gpg]} )) || return
-
-alias github_token='api-token github
-'
-if hash hub &>/dev/null; then
-    hub() {
-        token=$(github_token)
-        if [ -z "$token" ]; then
-            command hub "$@"
-        else
-            GITHUB_TOKEN=$token command hub "$@"
-        fi
-    }
+if (( ${+commands[hub]} )); then
     alias g=hub
-fi
-
-if hash goreleaser &>/dev/null; then
-    github_gorel() {
-        token=$(github_token)
-        if [ -z "$token" ]; then
-            goreleaser "$@"
-        else
-            GITHUB_TOKEN=$token goreleaser "$@"
-        fi
-    }
 fi

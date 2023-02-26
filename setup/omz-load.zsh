@@ -1,1 +1,0 @@
-load/omz-load.zsh

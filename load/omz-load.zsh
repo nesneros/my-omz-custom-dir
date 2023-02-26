@@ -14,6 +14,9 @@ if [ ! -d "$ZSH_CUSTOM/load" ]; then
 fi
 export ZSH_CUSTOM 
 
+# Add scripts dir to PATH
+PATH=$ZSH_CUSTOM/scripts:$PATH
+
 # Setup Brew first. E.g. direnv is needed 
 source $ZSH_CUSTOM/load/brew-load.zsh
 
