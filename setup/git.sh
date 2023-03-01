@@ -26,7 +26,7 @@ fi
 
 gc color.ui auto
 gc core.pager cat
-gc core.hooksPath $ZSH_CUSTOM/githooks/
+gc core.hooksPath $ZSH_CUSTOM/githooks
 
 alias aliases "!git config --get-regexp alias | sed -re 's/^alias\.([a-z-]+) /\1:\t/g' | column -t -s $'\t'"
 alias s "status --short"
