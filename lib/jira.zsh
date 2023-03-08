@@ -15,3 +15,17 @@ jira() {
 alias j=jira
 
 alias jmyopen='jira issue list -a$(command jira me) --order-by rank --reverse -s~done'
+alias jmyopen-select='jira issue list -a$(command jira me) --order-by rank -s~done | fzf --tac | awk "{ print \$2 }" '
+
+jopen() {
+    id=$1
+    if [[ -z "$id" ]]; then
+        currentBranchName=$(git branch --show-current)
+        id=$(git config --get "branch.$currentBranchName.commitScope") || :
+    fi
+    if [[ -z "$id" ]]; then
+        echo "No Jira ticket found"
+        return 1
+    fi
+    jira open $id
+}
