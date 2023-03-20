@@ -65,6 +65,8 @@ alias -g Z='| fzf --tac'
 # Colorize json
 alias -g J='|jq .'
 
+alias week="date +%V"
+
 alias+ pgrep -fli
 
 # Remove duplicates from PATH
