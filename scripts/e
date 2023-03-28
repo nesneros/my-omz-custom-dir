@@ -6,9 +6,6 @@ if [ -d "$arg" ]; then
     cd "$arg"
     echo hash zoxide &>/dev/null && zoxide add .
     exec "$VEDITOR" . >/tmp/editor-log 2>&1 &
-elif [ -f "$arg" ]; then
-    exec "$VEDITOR" "$arg" >/tmp/editor-log 2>&1 &
 else
-    echo "No such file or directory: $arg"
-    exit 1
+    exec "$VEDITOR" "$arg" >/tmp/editor-log 2>&1 &
 fi
