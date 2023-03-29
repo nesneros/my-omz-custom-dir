@@ -24,21 +24,20 @@ alias myip='echo $(curl -s http://whatismyip.akamai.com/)'
 # alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 function _makesudo {
-    if type "$1" >/dev/null ; then
+    if type "$1" >/dev/null; then
         alias "$1"="sudo $1"
     fi
 }
 
 # Always use sudo with a few commands
 case "$OSTYPE" in
-    (linux*)
-        for p in apt aptitude snap systemctl; do
-            _makesudo $p
-        done
-        ;;
-    (darvin*)
-        ;;
-    (*)
+linux*)
+    for p in apt aptitude snap systemctl; do
+        _makesudo $p
+    done
+    ;;
+darvin*) ;;
+*) ;;
 esac
 
 # Convenient function to create a dir and cd into it
@@ -48,7 +47,7 @@ function mcd {
 }
 
 # gor alias is define for golang plugin. Redefined it here to use parsepanic
-if typeset -f gorunpp > /dev/null ; then
+if typeset -f gorunpp >/dev/null; then
     alias gor=gorunpp
 fi
 # Some global aliases
@@ -71,9 +70,16 @@ alias+ pgrep -fli
 
 # Remove duplicates from PATH
 typeset -U path
+# Remove non-existing dirs from path
+valid_dirs=()
+for dir in $path; do
+    [[ -d $dir ]] && valid_dirs+=($dir)
+done
+path=("${valid_dirs[@]}")
 
 # autoload -U compinit && compinit
 # Define some aliases. Note gr overrides a git alias
 # alias gr=gradle
 
 unsetopt correctall
+
