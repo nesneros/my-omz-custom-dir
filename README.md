@@ -14,7 +14,6 @@
 Install in OMZ/custom/plugins directory
 
 * autoupdate
-* clipboard
 * fzf-tab
 * zsh-completions
 * fast-syntax-highlighting
