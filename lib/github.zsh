@@ -9,4 +9,6 @@ fi
 
 if (( ${+commands[hub]} )); then
     alias g=hub
+else 
+    alias g=git
 fi

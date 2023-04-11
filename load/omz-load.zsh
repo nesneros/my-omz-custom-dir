@@ -60,7 +60,6 @@ plugins=(
   dirhistory
   # fd
   fzf
-  git
   macos
   web-search
   # Seperate installed plugins
