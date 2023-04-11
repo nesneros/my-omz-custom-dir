@@ -62,6 +62,7 @@ plugins=(
   fzf
   macos
   web-search
+  z
   # Seperate installed plugins
   $(baseNameIfExist autoupdate)
   $(baseNameIfExist fzf-tab)
