@@ -57,7 +57,6 @@ MAGIC_ENTER_OTHER_COMMAND="ls ."
 plugins=(
   my-init
   # Standard plugins
-  aws
   dirhistory
   # fd
   fzf
