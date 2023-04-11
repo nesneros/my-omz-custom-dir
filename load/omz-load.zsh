@@ -57,29 +57,17 @@ MAGIC_ENTER_OTHER_COMMAND="ls ."
 plugins=(
   my-init
   # Standard plugins
-  # asdf
   aws
-  # brew
-  # direnv
   dirhistory
-  docker
   # fd
   fzf
   git
-  golang
-  gradle
   macos
-  # magic-enter
-  # ripgrep
-  thefuck
-  transfer
   web-search
-  zoxide
   # Seperate installed plugins
   $(baseNameIfExist autoupdate)
   $(baseNameIfExist fzf-tab)
   $(baseNameIfExist zsh-completions)
-  # $(baseNameIfExist zsh-syntax-highlighting)
   $(baseNameIfExist fast-syntax-highlighting)
   # gcloud must come after zsh-completions
   gcloud
